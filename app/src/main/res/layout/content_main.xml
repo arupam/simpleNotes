@@ -12,6 +12,9 @@
        android:id="@+id/recyclerNotes"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
+       app:reverseLayout="true"
+       app:stackFromEnd="true"
+       android:scrollbars="vertical"
        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
