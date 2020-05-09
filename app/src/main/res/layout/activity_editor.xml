@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Editor"
+    android:background="#ffffff">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/noteEditor"
+        android:layout_width="380dp"
+        android:layout_height="650dp"
+        android:orientation="vertical"
+        android:background="@drawable/cardbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.122">
+
+        <EditText
+            android:id="@+id/editorTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#cfeafa"
+            android:textSize="20sp"
+            android:hint="Title"
+            android:textColorHint="#cfeafa"
+            />
+        <EditText
+            android:id="@+id/editorContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="20dp"
+            android:inputType="textMultiLine"
+            android:hint="Content"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:scrollbars="vertical"
+            android:gravity="top|left"
+            android:textColorHint="#ffffff"
+            />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/editorSaveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="338dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteEditor"
+        app:srcCompat="@drawable/check" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
