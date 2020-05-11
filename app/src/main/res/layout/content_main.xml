@@ -12,6 +12,8 @@
        android:id="@+id/recyclerNotes"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
+       android:padding="4dp"
+       android:background="#c5c5c5"
        app:reverseLayout="true"
        app:stackFromEnd="true"
        android:scrollbars="vertical"

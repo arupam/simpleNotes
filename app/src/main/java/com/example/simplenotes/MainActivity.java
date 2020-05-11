@@ -8,12 +8,19 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+    RecyclerView noteList;
+    static ArrayList<String> mTitle= new ArrayList<>();
+    static ArrayList<String> mContent = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        noteList=findViewById(R.id.recyclerNotes);
+
+        initnote();
+        initRecyclerView();
+
+
+
+
+
 
         //fab is to add notes
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -31,9 +47,24 @@ public class MainActivity extends AppCompatActivity {
                   //      .setAction("Action", null).show();
                 Intent i = new Intent(getApplicationContext(),Editor.class);
                 startActivity(i);
-
             }
         });
+    }
+
+    private void initnote(){
+        mTitle.add("First Note");
+        mContent.add("First content is here! \nline2 \nline3");
+
+        mTitle.add("Second Note");
+        mContent.add("second content goes here! \nline2 \nline3");
+    }
+
+    private  void initRecyclerView(){
+        RecyclerView recyclerView=findViewById(R.id.recyclerNotes);
+        notesAdapter adapter = new notesAdapter(mTitle,mContent,this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
 
     @Override
